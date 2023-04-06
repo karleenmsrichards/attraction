@@ -8,20 +8,10 @@ const port = process.env.PORT || 5050;
 
 let date = new Date();
 
-let numberOfVisits = 1;
-
-if (numberOfVisits && typeof window !== "undefined") {
-  numberOfVisits = Number(numberOfVisits) + 1;
-  localStorage.setItem("page_view", numberOfVisits);
-} else {
-  numberOfVisits = 1;
-  localStorage.setItem("page_view", 1);
-}
-
 let formattedDate = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
 
 app.get("/", function (request, response) {
-  response.send(formattedDate, numberOfVisits);
+  response.send(formattedDate);
 });
 
 console.log(formattedDate);
