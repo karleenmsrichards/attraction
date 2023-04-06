@@ -11,7 +11,7 @@ let date = new Date();
 let formattedDate = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
 
 app.get("/", function (request, response) {
-  response.send(formattedDate);
+  response.send(`It's ${formattedDate}, thanks for visiting`);
 });
 
 console.log(formattedDate);
