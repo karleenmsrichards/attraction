@@ -7,6 +7,8 @@ app.use(cors());
 
 const port = 5050;
 
+let visitorCount = 0;
+
 app.get("/", function (request, response) {
   const currentDate = new Date().toString();
 
@@ -22,7 +24,7 @@ app.get("/", function (request, response) {
   );
   response.json({
     time: `${currentTime}`,
-    visitors: `Not sure how to count visitors 🥲`,
+    visitors: `${visitorCount + 1}`,
   });
 });
 
