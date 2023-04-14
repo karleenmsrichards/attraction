@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/karleenmsrichards/attraction#readme",
   "dependencies": {
+    "browser-env": "^3.3.0",
     "cors": "^2.8.5",
     "express": "^4.18.2"
   }
