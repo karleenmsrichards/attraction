@@ -3,15 +3,25 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 
+app.use(cors());
+
 const port = 5050;
 
-let date = new Date();
+const currentDate = new Date();
 
-let formattedDate = date.toLocaleTimeString();
+let options = {
+  hour: "numeric",
+  minute: "numeric",
+  second: "numeric",
+  hour12: false,
+};
+
+const currentTime = new Intl.DateTimeFormat("en-us", options).format(
+  new Date(currentDate)
+);
+
 app.get("/", function (request, response) {
-  response.json({ time: `${formattedDate}`, visitors: 0 });
+  response.json({ time: `${currentTime}`, visitors: 0 });
 });
 
 app.listen(port, () => console.log(`running port ${port} 😎`));
-
-console.log(formattedDate);
