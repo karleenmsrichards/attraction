@@ -20,7 +20,7 @@ const currentTime = new Intl.DateTimeFormat("en-us", options).format(
   new Date(currentDate)
 );
 
-app.get("/https://ipinfo.io", function (request, response) {
+app.get("/", function (request, response) {
   response.json({
     time: `${currentTime}`,
     visitors: `Not sure how to count visitors 🥲`,
